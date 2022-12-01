@@ -51,7 +51,7 @@ export default function CustomizedTables() {
       <Table sx={{ minWidth:300 }} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell></StyledTableCell>
+            <StyledTableCell align="right">Code</StyledTableCell>
             <StyledTableCell align="right">First Name</StyledTableCell>
             <StyledTableCell align="right">Last Name</StyledTableCell>
             <StyledTableCell align="right">Participation</StyledTableCell>

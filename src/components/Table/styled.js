@@ -5,9 +5,19 @@ export const ContainerTable =styled.div`
 display:flex;
 flex-direction:column;
 height:30%;
-width:60%;
-margin-left:1em;
+width:40%;
 margin-top:10%;
+
+
+@media screen and (min-device-width : 320px) and (max-device-width : 480px) {
+	width:98%;
+    align-items:center;
+    justify-content:center;
+    margin-left:1%;
+    
+
+}
+
 
 `
 
