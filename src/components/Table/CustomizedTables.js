@@ -8,6 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { ContainerTable } from './styled';
+import { ContextApi } from '../../context';
 
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -32,20 +33,27 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 
 //  vai ser aqui onde vou trazer api transformar mock em state
-// criar Api 
+// criar funcão executa Api 
+
 
 const rows = [
-{"code" : 1,"name": "Carlos" , "lastName" : "Moura","participation": "5%"},
-{"code" : 2,"name": "Fernanda" , "lastName" : "Oliveira","participation":"15%"},
-{"code" : 3,"name": "Hugo" , "lastName" : "Silva","participation":"20%"},
-{"code" : 4,"name": "Eliza" , "lastName" : "Souza","participation":"25%"},
-{"code" : 5,"name": "Anderson" , "lastName" : "Santos","participation":"40%"}
+{"id" : 1,"name": "Carlos" , "lastName" : "Moura","participation": "5%"},
+{"id" : 2,"name": "Fernanda" , "lastName" : "Oliveira","participation":"15%"},
+{"id" : 3,"name": "Hugo" , "lastName" : "Silva","participation":"20%"},
+{"id" : 4,"name": "Eliza" , "lastName" : "Souza","participation":"25%"},
+{"id" : 5,"name": "Anderson" , "lastName" : "Santos","participation":"40%"}
 ]
 
 
+
+
 export default function CustomizedTables() {
+
+  const rows = React.useContext(ContextApi);
+  
+  
   return (
-    
+        
         <ContainerTable>
     <TableContainer component={Paper}>
       <Table sx={{ minWidth:300 }} aria-label="customized table">
@@ -61,11 +69,19 @@ export default function CustomizedTables() {
           {rows.map((row) => (
             <StyledTableRow key={row.name}>
               <StyledTableCell component="th" scope="row">
-                {row.code}
+                {row.id}
               </StyledTableCell>
-              <StyledTableCell align="right">{row.name}</StyledTableCell>
-              <StyledTableCell align="right">{row.lastName}</StyledTableCell>
-              <StyledTableCell align="right">{row.participation}</StyledTableCell>
+
+              <StyledTableCell align="right"infoName={row.name}>{row.name}
+              </StyledTableCell>
+
+              <StyledTableCell align="right">
+                {row.lastName}
+                </StyledTableCell>
+
+              <StyledTableCell align="right">
+                {row.participation}
+                </StyledTableCell>
               
             </StyledTableRow>
           ))}

@@ -3,7 +3,7 @@ import { primary_color } from "../../constants/constants"
 
 
 export const ContainerHeader= styled.div`
-display: inline-flex;
+display:flex;
 flex-direction:row;
 background-color:${primary_color};
 justify-content: space-evenly;
@@ -20,6 +20,7 @@ input{
     display:flex;
     flex-direction:row;
     height:5%;
+    width:100%;
 }
 `
 

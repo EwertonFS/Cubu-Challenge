@@ -35,18 +35,18 @@ const Header = () => {
   console.log(dado)
  }
 
- console.log(name)
+//  console.log(name)
  //aqui vou mandar os dados para o Back End no formato do objeto "dado"
-//---------------------------------------------------------------------//------------------------
+// e se tudo der certo incluir---------------------------------------------------------------------//------------------------
  
  
 
 
   return (
     <ContainerHeader>
-      <TitleHeader>
+      {/* <TitleHeader>
         <p> Cubu </p>
-      </TitleHeader>  
+      </TitleHeader>   */}
       {/* <ContainerForm> */}
       {/* <form> */}
       <InputName>
