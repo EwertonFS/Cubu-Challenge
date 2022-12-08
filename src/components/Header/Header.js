@@ -6,6 +6,9 @@ import {
   InputLastName,
   InputName,
   InputParticipation,
+  LastName,
+  Name,
+  Participation,
   TitleHeader,
 } from "./styled";
 import Button from "@mui/material/Button";
@@ -47,9 +50,9 @@ const Header = () => {
       {/* <TitleHeader>
         <p> Cubu </p>
       </TitleHeader>   */}
-      {/* <ContainerForm> */}
-      {/* <form> */}
-      <InputName>
+      <ContainerForm>
+      
+      <Name>
         <TextField
           required
           id="filled-required"
@@ -63,9 +66,9 @@ const Header = () => {
           onChange={handleUpdateName}
   
         />
-      </InputName>
+      </Name>
 
-      <InputLastName>
+      <LastName>
         <TextField
           required
           id="filled-required"
@@ -76,13 +79,13 @@ const Header = () => {
           value={lastName}
           onChange={handleUpdateLastName}
         />
-      </InputLastName>
+      </LastName>
 
-      <InputParticipation>
+      <Participation>
         <TextField
           required
           id="filled-required"
-          label="Number %"
+          label="Number $"
           placeholder="Participation"
           variant="filled"
           type="number"
@@ -90,7 +93,7 @@ const Header = () => {
           value={participation}
           onChange={handleUpdateParticipation}
         />
-      </InputParticipation>
+      </Participation>
       <ButtonGo>
         <Button
           color="primary"
@@ -104,8 +107,8 @@ const Header = () => {
         </Button >
       
       </ButtonGo>
-      {/* </form> */}
-      {/* </ContainerForm> */}
+      
+      </ContainerForm>
     </ContainerHeader>
   );
 };

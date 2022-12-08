@@ -7,11 +7,13 @@ import { FigureContainer, MainContainer, Title } from "./styled";
 const Home = () => {
   //passo 1º vou receber a request no useeffect
   const rows = [
-    { id: 1, name: "Carlos", lastName: "Moura", participation: "5%" },
-    { id: 2, name: "Fernanda", lastName: "Oliveira", participation: "15%" },
-    { id: 3, name: "Hugo", lastName: "Silva", participation: "20%" },
-    { id: 4, name: "Eliza", lastName: "Souza", participation: "25%" },
-    { id: 5, name: "Anderson", lastName: "Santos", participation: "40%" },
+  { id: 1, name: "Carlos", lastName: "Moura", participation: 25 },
+  { id: 2, name: "Fernanda", lastName: "Oliveira", participation: 30 },
+  { id: 3, name: "Hugo", lastName: "Silva", participation: 30 },
+  { id: 4, name: "Eliza", lastName: "Souza", participation: 20 },
+  { id: 5, name: "Anderson", lastName: "Santos", participation: 30 },
+  { id: 6, name: "Ellon", lastName: "Musk", participation: 50},
+  { id: 7, name: "Roberto", lastName: "Justus", participation: 40},
   ];
 
   return (
@@ -25,8 +27,8 @@ const Home = () => {
           </Title>
           {/* <HeaderAppBar /> */}
           <FigureContainer>
-            <CustomizedTables value={rows} />
-            <Graphic value ={rows}/>
+            <CustomizedTables  />
+            <Graphic />
           </FigureContainer>
         </MainContainer>
       </ContextApi.Provider>
