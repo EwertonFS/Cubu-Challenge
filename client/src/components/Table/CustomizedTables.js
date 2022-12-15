@@ -9,6 +9,10 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { ContainerTable } from "./styled";
 import { ContextApi } from "../../context";
+import { Delete } from "@mui/icons-material";
+import { Button } from "@mui/material";
+import axios from "axios"
+import { useEffect } from "react";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -33,18 +37,31 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 //  vai ser aqui onde vou trazer api transformar mock em state
 // criar funcão executa Api
 
-const rows = [
-  { id: 1, name: "Carlos", lastName: "Moura", participation: 25 },
-  { id: 2, name: "Fernanda", lastName: "Oliveira", participation: 10 },
-  { id: 3, name: "Hugo", lastName: "Silva", participation: 15 },
-  { id: 4, name: "Eliza", lastName: "Souza", participation: 20 },
-  { id: 5, name: "Anderson", lastName: "Santos", participation: 30 },
-  { id: 6, name: "Vandinha", lastName: "Adms", participation: 20},
-  { id: 7, name: "storm", lastName: "spirity", participation: 10},
-  ];
 
 export default function CustomizedTables() {
-  const rows = React.useContext(ContextApi);
+  const setShareholder = React.useContext(ContextApi);
+
+
+  const deleteShareholder = (id) =>{
+   
+    axios.delete(`http://localhost:3003/shareholders/${id}`)
+    .then(response =>{
+      console.log(response)
+      // if(response.ok){
+      //   return 
+      //   setShareholder.filter((shareholders)=>{
+      //     shareholders.id !== id
+      //   })
+      // }
+      alert("usuário deletado com sucesso") 
+      
+    }).catch(error =>{
+      // console.log(error)
+      // alert("algo deu errado tente em outro momento")
+    })
+  }
+      
+
 
   return (
     <ContainerTable>
@@ -56,10 +73,11 @@ export default function CustomizedTables() {
               <StyledTableCell align="right">First Name</StyledTableCell>
               <StyledTableCell align="right">Last Name</StyledTableCell>
               <StyledTableCell align="right">Participation</StyledTableCell>
+              <StyledTableCell align="right">Delete</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map((row) => (
+            {setShareholder.map((row) => (
               <StyledTableRow key={row.name}>
                 <StyledTableCell component="th" scope="row">
                   {row.id}
@@ -73,6 +91,16 @@ export default function CustomizedTables() {
 
                 <StyledTableCell align="right">
                   {row.participation}
+                </StyledTableCell>
+
+                <StyledTableCell align="right">
+                  <Button
+                  color="primary"
+                  variant="outlined"
+                  size="small"
+                  endIcon={<Delete />}
+                  onClick={()=>deleteShareholder(row.id)}
+                  ></Button>
                 </StyledTableCell>
               </StyledTableRow>
             ))}

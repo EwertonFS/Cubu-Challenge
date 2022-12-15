@@ -16,6 +16,7 @@ input{
     background-color:white;
     display:flex;
     
+    
    
     
    
@@ -35,12 +36,16 @@ export const ContainerForm = styled.form`
 display:flex;
 flex-direction:row;
 flex-wrap: nowrap;
-align-items:center;
 justify-content: space-around;
 width:100%;
-
-
 `
+// display:flex;
+// flex-direction:row;
+// flex-wrap: nowrap;
+// justify-content: space-around;
+// width:100%;
+// margin-top:100px;
+
 
 export const Name = styled.div`
 width:20%;
@@ -56,7 +61,8 @@ width:20%;
 export const Participation = styled.div`
 width:20%;
 @media screen and (min-device-width : 320px) and (max-device-width : 480px) {
-    margin:1%;
+margin:1%;
+width:20%;
 `
 
 
@@ -69,7 +75,7 @@ export const TitleHeader= styled.div`
 align-items:left;
 justify-content:left;
 @media screen and (min-device-width : 320px) and (max-device-width : 480px) {
-    display:none;
+display:none;
 }
 
 `
@@ -77,7 +83,7 @@ justify-content:left;
 export const ButtonGo= styled.div`
 
 @media screen and (min-device-width : 320px) and (max-device-width : 480px){
-    margin-top:2%; 
+margin-top:2%; 
 }
 `
 export const InputName= styled.div`

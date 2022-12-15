@@ -21,6 +21,9 @@ display:flex;
 flex-direction:column;	
 }
 
-
 }
+`
+
+export const Container = styled.div`
+margin:0;
 `

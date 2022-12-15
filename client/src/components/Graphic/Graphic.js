@@ -25,7 +25,7 @@ export const options = {
 export const Graphic = () => {
    
 //trazer o row 
-const rows = React.useContext(ContextApi)
+const shareholder = React.useContext(ContextApi)
 
 //https://www.youtube.com/watch?v=yQcNA41PMco
 // revisar java script
@@ -43,18 +43,18 @@ const rows = React.useContext(ContextApi)
 // const muda Object.keys(rows) =>
 //  rows[0].name +" "+rows[0].lastName *concateno objeto 
 // 
-  const nome  = rows.map((row)=>{
+  const nome  = shareholder.map((row)=>{
   return [[row.name +" " + row.lastName]]
   }).toString()
 
 
  
-  const participacao = rows.map((row)=>{
+  const participacao = shareholder.map((row)=>{
   return [[row.participation]]
   })
 
   //mais proximo ate o momento
-  const teste = rows.map((row)=>{
+  const teste = shareholder.map((row)=>{
    return  [ `${row.name +" " + row.lastName}`, row.participation]
   })
   //acrescentar array 
