@@ -38,14 +38,17 @@ Feel free to make improviments like new funcionalities, visual optimizations, AP
 ## Questions
 Send your questions directly to dev@cubo.network or opening a issue.
 
+## Project Conclusive
+
+### Front-End
 
 
+Tecnology:
+ * Axios
+ * Styled-Components
+ * Matirial-MUI
 
-
-
-
-
-
-
-
-##
+### Back-End
+ * Rest Request
+ * Test unitary-Jest
+ * Mysql
