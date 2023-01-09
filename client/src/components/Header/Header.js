@@ -114,7 +114,7 @@ const Header = () => {
             type={"text"}
             size="small"
             required
-            inputProps={{ inputMode:'text',/* pattern:'/^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/'*/}}
+            //inputProps={{ inputMode:'text',/* pattern:'/^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/'*/}}
             title ="Apenas letras são consideradas"
           />
         </LastName>
