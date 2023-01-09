@@ -1,4 +1,3 @@
-# Cubu { "developer": "fullstack" }
 
 ### Requesitos:
 
@@ -15,7 +14,8 @@ The objective of this challenge is to evaluate your domain in fullstack developm
 ## Challenge
 The following layout should be developed
 
-img
+![layout-onepage](https://user-images.githubusercontent.com/94709800/211327550-e5ae6047-58ee-4558-9bcb-ba8a526820b5.png)
+# Cubu { "developer": "fullstack" }
 
 You can download the PSD here
 
