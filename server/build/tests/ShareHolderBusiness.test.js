@@ -11,17 +11,56 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const ShareHolderBusiness_1 = require("../src/business/ShareHolderBusiness");
 const ShareholderDatabaseMock_1 = require("./mock/ShareholderDatabaseMock");
+const ShareholderMock_1 = require("./mock/ShareholderMock");
+const ShareholderUserMock_1 = require("./mock/ShareholderUserMock");
 const userBusinessMock = new ShareHolderBusiness_1.ShareHolderBusiness(new ShareholderDatabaseMock_1.ShareholderDatabaseMock());
 describe(" Testando a camada Businees", () => {
     test("testando se vem todos usurarios do banco", () => __awaiter(void 0, void 0, void 0, function* () {
-        expect.assertions(1);
+        const result = yield userBusinessMock.getAllShareHoldersBusinees();
+        expect(result).toEqual([ShareholderUserMock_1.shareHolderUserMock1, ShareholderUserMock_1.shareHolderUserMock2]);
+    }));
+});
+describe(" Testando a camada Businees", () => {
+    test("Erro algum dos campos estão Inválidos", () => __awaiter(void 0, void 0, void 0, function* () {
+        expect.assertions;
         try {
-            const result = yield userBusinessMock.getAllShareHoldersBusinees();
-            expect(result).toEqual(result);
-            console.log(result);
+            const user = new ShareholderMock_1.ShareholderMock("", "Toad", "Cogumelo", 12);
+            yield userBusinessMock.addShareHolderBusiness(user);
         }
         catch (error) {
-            expect(error.message);
+            expect(error).toEqual("Missing input");
+            expect(error).toEqual("401 - Unauthorized");
+            console.log(error);
+        }
+    }));
+    test("Acrescentando acionistas no banco ", () => __awaiter(void 0, void 0, void 0, function* () {
+        expect.assertions(1);
+        try {
+            const user = new ShareholderMock_1.ShareholderMock("3", "Toad", "Cogumelo", 12);
+            const result = yield userBusinessMock.addShareHolderBusiness(user);
+            expect(result).toEqual(user);
+        }
+        catch (error) {
+            error.message;
+        }
+    }));
+});
+describe(" Testando a camada Businees", () => {
+    test("Testando o Deltete ", () => __awaiter(void 0, void 0, void 0, function* () {
+        expect.assertions(1);
+        try {
+            const input = {
+                id: "id_Mockado1",
+                name: "Mario",
+                lastName: "Koppa",
+                participation: 25,
+            };
+            const id = input.id;
+            const result = yield userBusinessMock.deleteShareholder(id);
+            expect(result).toEqual(ShareholderUserMock_1.shareHolderUserMock1);
+        }
+        catch (error) {
+            error.message;
         }
     }));
 });

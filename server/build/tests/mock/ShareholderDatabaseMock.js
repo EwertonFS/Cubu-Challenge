@@ -17,17 +17,18 @@ class ShareholderDatabaseMock {
             return [ShareholderUserMock_1.shareHolderUserMock1, ShareholderUserMock_1.shareHolderUserMock2];
         });
     }
-    createShareholderDataBase(ShareholderMock) {
-        return __awaiter(this, void 0, void 0, function* () { });
+    createShareholderDataBase(user) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return user;
+        });
     }
     deleteShareHolderDatabase(id) {
         return __awaiter(this, void 0, void 0, function* () {
-            let bank = [ShareholderUserMock_1.shareHolderUserMock1, ShareholderUserMock_1.shareHolderUserMock2];
-            if (id === "1") {
-                bank.splice(0, 1);
+            if (id === "id_Mockado1") {
+                return ShareholderUserMock_1.shareHolderUserMock1;
             }
-            if (id === "2") {
-                bank.splice(1, 1);
+            else if (id === "id_Mockado2") {
+                return ShareholderUserMock_1.shareHolderUserMock2;
             }
             else {
                 undefined;

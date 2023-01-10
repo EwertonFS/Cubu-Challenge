@@ -21,12 +21,12 @@ class ShareHolderDatabase extends BaseDatabase_1.BaseDatabase {
         this.createShareholderDataBase = (user) => __awaiter(this, void 0, void 0, function* () {
             try {
                 const result = yield BaseDatabase_1.BaseDatabase.connection(ShareHolderDatabase.tableName).insert({
-                    user,
+                    user
                 });
                 return result;
             }
             catch (error) {
-                throw new Error("Erro do banco !");
+                throw new Error("Erro do banco!");
             }
         });
         this.deleteShareHolderDatabase = (id) => __awaiter(this, void 0, void 0, function* () {

@@ -20,25 +20,29 @@ class ShareHolderBusiness {
                 return result;
             }
             catch (error) {
-                throw new Error(error.message);
+                throw new Error(error.message(" 400 - Bad Request"));
             }
         });
         this.addShareHolderBusiness = (input) => __awaiter(this, void 0, void 0, function* () {
             try {
                 const { name, lastName, participation } = input;
-                if (!name || !lastName || !participation)
-                    throw new Error('Preencha os campos "name,"lastName","participation"');
+                if (!name || !lastName || !participation) {
+                    throw new Error("Preencha os campos name,lastName,participation");
+                }
                 const user = new ShareHolder_1.ShareHolder(name, lastName, participation);
                 const result = yield this.shareHolderDatabase.createShareholderDataBase(user);
-                console.log(result);
-                result.send(result);
             }
             catch (error) {
-                throw new Error(error.message);
             }
         });
         this.deleteShareholder = (id) => __awaiter(this, void 0, void 0, function* () {
-            const result = yield this.shareHolderDatabase.deleteShareHolderDatabase(id);
+            try {
+                const result = yield this.shareHolderDatabase.deleteShareHolderDatabase(id);
+                return result;
+            }
+            catch (error) {
+                throw new Error(error.message(" 400 - Bad Request"));
+            }
         });
     }
 }

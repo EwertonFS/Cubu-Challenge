@@ -23,14 +23,15 @@ class ShareHolderController {
             }
         });
         this.addShareHolderController = (req, res) => __awaiter(this, void 0, void 0, function* () {
+            const { name, lastName, participation } = req.body;
+            const input = {
+                name,
+                lastName,
+                participation,
+            };
             try {
-                const { name, lastName, participation } = req.body;
-                const input = {
-                    name,
-                    lastName,
-                    participation,
-                };
                 const result = yield this.shareHolderBusiness.addShareHolderBusiness(input);
+                console.log(result);
                 res.status(201).end(result);
             }
             catch (error) {
@@ -43,7 +44,9 @@ class ShareHolderController {
                 const result = yield this.shareHolderBusiness.deleteShareholder(id);
                 res.status(200).send(result);
             }
-            catch (error) { }
+            catch (error) {
+                throw new Error(error.message(" 400 - Bad Request"));
+            }
         });
     }
 }
