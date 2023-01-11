@@ -1,14 +1,11 @@
-import { ShareHolderBusiness } from "./business/ShareHolderBusiness";
-import { app } from "./controller/app";
-import ShareHolderController from "./controller/ShareHolderController";
-import { ShareHolderDatabase } from "./data/ShareHolderDatabase";
+import express from 'express'
+import cors from 'cors'
 
-const shareHolderController = 
-     new ShareHolderController(
-     new ShareHolderBusiness
-    (new ShareHolderDatabase())
-);
+export const app = express()
 
-app.get("/shareholders", shareHolderController.getAllShareHolders);
-app.put("/shareholders", shareHolderController.addShareHolderController);
-app.delete("/shareholders/:id", shareHolderController.DeleteUser);
+app.use(express.json())
+app.use(cors())
+
+app.listen(3003, () => {
+   console.log('Servidor rodando na porta 3003')
+})
