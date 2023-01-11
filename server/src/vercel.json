@@ -1,6 +1,7 @@
 {
   "version": 2,
-  "public": true,
+  "outputDirectory": "build",
+  "buildCommand": "tsc && node ./build/index.js",
   "build": [
     {
       "src": "./router/UserRouter.ts",
