@@ -8,10 +8,10 @@
     }
   ],
 
-  "rewrites": [
+  "routes": [
     { 
     "src": "/(.*)",
-     "dest": "/index.ts" 
+    "dest": "/index.ts" 
      }
     ]
 }
