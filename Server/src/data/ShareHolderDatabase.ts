@@ -21,9 +21,9 @@ export class ShareHolderDatabase extends BaseDatabase {
         ShareHolderDatabase.tableName
       ).insert(
         // user
-        {
+        
           user
-        }
+        
       );
       //ou método Row
        /*   const result :shareHolder = await ShareHolderDatabase.connection.raw(`INSERT INTO SHAREHOLDERS(name,lastName,participation)
@@ -45,7 +45,7 @@ export class ShareHolderDatabase extends BaseDatabase {
 
   deleteShareHolderDatabase = async (id: string) => {
     try {
-      const result = await BaseDatabase.connection(
+      await BaseDatabase.connection(
         ShareHolderDatabase.tableName
 
         //   const result = await ShareHolderDatabase.connection.raw(`
@@ -54,7 +54,7 @@ export class ShareHolderDatabase extends BaseDatabase {
       )
         .delete()
         .where({ id: id });
-      return result;
+      
       
     } catch (error) {
       throw new Error("Erro do banco !");

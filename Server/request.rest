@@ -1,0 +1,16 @@
+GET http://localhost:3003/users/shareholders
+
+#####
+
+put http://localhost:3003/users/shareholders
+Content-Type: application/json
+
+{
+    "name":"Roberto",
+    "lastName":"Justus",
+    "participation":15
+}
+
+###
+DELETE http://localhost:3003/users/shareholders/4
+    

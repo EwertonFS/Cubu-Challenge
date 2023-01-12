@@ -13,7 +13,7 @@ export class ShareHolderBusiness {
 
       return result;
     } catch (error: any) {
-      throw new Error(error.message(" 400 - Bad Request"));
+      throw new Error(" 400 - Bad Request");
     }
   };
 
@@ -27,26 +27,26 @@ export class ShareHolderBusiness {
 
       const user = new ShareHolder(name, lastName, participation);
 
-      const result = await this.shareHolderDatabase.createShareholderDataBase(
+      await this.shareHolderDatabase.createShareholderDataBase(
         user
       );
-
+        
       //console.log(result);
       /* result.send(result) */
-    } catch (error: any) {
-      
+    } catch (err:any) {
+      throw new Error(" 400 - Bad Request");
     }
   };
 
   deleteShareholder = async (id: string) => {
     try {
-      const result = await this.shareHolderDatabase.deleteShareHolderDatabase(
+      await this.shareHolderDatabase.deleteShareHolderDatabase(
         id
       );
 
-      return result;
+     
     } catch (error: any) {
-      throw new Error(error.message(" 400 - Bad Request"));
+      throw new Error(" 400 - Bad Request");
     }
   };
 }
