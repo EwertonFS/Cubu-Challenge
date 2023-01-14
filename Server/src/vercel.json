@@ -4,14 +4,14 @@
     "pulic":true,
     "builds": [
       {
-        "src": "./src/index.js",
+        "src": "src/router/UserRouter.js",
         "use": "@vercel/node"
       }
     ],
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "/src/index.js"
+        "dest": "src/router/UserRouter.js"
       }
     ]
     
