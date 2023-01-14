@@ -3,9 +3,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const app_1 = require("./controller/app");
-const ShareHolderController_1 = __importDefault(require("./controller/ShareHolderController"));
-const shareHolderController = new ShareHolderController_1.default;
-app_1.app.get("/shareholders", shareHolderController.getAllShareHolders);
-app_1.app.put("/shareholders", shareHolderController.addShareHolderController);
-app_1.app.delete("/shareholders/:id", shareHolderController.DeleteUser);
+exports.app = void 0;
+const express_1 = __importDefault(require("express"));
+const cors_1 = __importDefault(require("cors"));
+exports.app = (0, express_1.default)();
+exports.app.use(express_1.default.json());
+exports.app.use((0, cors_1.default)());
+exports.app.listen(3003, () => {
+    console.log('Servidor rodando na porta 3003');
+});
+//# sourceMappingURL=index.js.map

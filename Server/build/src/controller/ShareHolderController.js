@@ -45,7 +45,7 @@ class ShareHolderController {
                 res.status(200).send(result);
             }
             catch (error) {
-                throw new Error(error.message(" 400 - Bad Request"));
+                throw new Error(" 400 - Bad Request");
             }
         });
     }

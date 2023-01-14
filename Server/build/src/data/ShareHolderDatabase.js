@@ -20,9 +20,7 @@ class ShareHolderDatabase extends BaseDatabase_1.BaseDatabase {
         });
         this.createShareholderDataBase = (user) => __awaiter(this, void 0, void 0, function* () {
             try {
-                const result = yield BaseDatabase_1.BaseDatabase.connection(ShareHolderDatabase.tableName).insert({
-                    user
-                });
+                const result = yield BaseDatabase_1.BaseDatabase.connection(ShareHolderDatabase.tableName).insert(user);
                 return result;
             }
             catch (error) {
@@ -31,10 +29,9 @@ class ShareHolderDatabase extends BaseDatabase_1.BaseDatabase {
         });
         this.deleteShareHolderDatabase = (id) => __awaiter(this, void 0, void 0, function* () {
             try {
-                const result = yield BaseDatabase_1.BaseDatabase.connection(ShareHolderDatabase.tableName)
+                yield BaseDatabase_1.BaseDatabase.connection(ShareHolderDatabase.tableName)
                     .delete()
                     .where({ id: id });
-                return result;
             }
             catch (error) {
                 throw new Error("Erro do banco !");

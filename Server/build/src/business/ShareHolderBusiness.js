@@ -20,7 +20,7 @@ class ShareHolderBusiness {
                 return result;
             }
             catch (error) {
-                throw new Error(error.message(" 400 - Bad Request"));
+                throw new Error(" 400 - Bad Request");
             }
         });
         this.addShareHolderBusiness = (input) => __awaiter(this, void 0, void 0, function* () {
@@ -30,18 +30,18 @@ class ShareHolderBusiness {
                     throw new Error("Preencha os campos name,lastName,participation");
                 }
                 const user = new ShareHolder_1.ShareHolder(name, lastName, participation);
-                const result = yield this.shareHolderDatabase.createShareholderDataBase(user);
+                yield this.shareHolderDatabase.createShareholderDataBase(user);
             }
-            catch (error) {
+            catch (err) {
+                throw new Error(" 400 - Bad Request");
             }
         });
         this.deleteShareholder = (id) => __awaiter(this, void 0, void 0, function* () {
             try {
-                const result = yield this.shareHolderDatabase.deleteShareHolderDatabase(id);
-                return result;
+                yield this.shareHolderDatabase.deleteShareHolderDatabase(id);
             }
             catch (error) {
-                throw new Error(error.message(" 400 - Bad Request"));
+                throw new Error(" 400 - Bad Request");
             }
         });
     }
