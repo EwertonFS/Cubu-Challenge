@@ -11,9 +11,9 @@ const app = express();
 
 /* module.exports.handler = serverless(app) */
 
-app.use(express.json());
-//app.use(cors())
 app.use("/users", userRouter);
+/* app.use(express.json()); */
+//app.use(cors())
 
 const server = app.listen(3003, () => {
   if (server) {

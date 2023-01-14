@@ -6,7 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const UserRouter_1 = require("./src/router/UserRouter");
 const app = (0, express_1.default)();
-app.use(express_1.default.json());
 app.use("/users", UserRouter_1.userRouter);
 const server = app.listen(3003, () => {
     if (server) {
