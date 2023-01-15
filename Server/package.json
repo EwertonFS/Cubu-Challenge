@@ -2,7 +2,7 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "src/router/UserRouter.js",
+  "main": "index.js",
   "scripts": {
     "start": "tsc && node ./build/index.js",
     "build": "tsc",
