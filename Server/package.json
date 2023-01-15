@@ -7,7 +7,7 @@
     "start": "tsc && node ./build/index.js",
     "build": "tsc",
     "migrations": "tsc && node ./build/migrations.js",
-    "dev": "tsnd src/index.ts",
+    "dev": "tsnd index.ts",
     "test": "jest"
   },
   "keywords": [],
