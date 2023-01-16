@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React from "react";
 import { Chart } from "react-google-charts";
 import { ContextApi } from "../../context";
 import { ChartContainer} from "./styled";
@@ -28,15 +28,15 @@ const shareholder = React.useContext(ContextApi)
   return [[row.participation]]
   })
 
-  //mais proximo ate o momento
+  
   const teste = shareholder.map((row)=>{
    return  [ `${row.name +" " + row.lastName}`, row.participation]
   })
   //acrescentar array 
   const nova = teste.unshift(["name","porcentagem"])
-    console.log(nova)
+    /* console.log(nova) */
   
-  console.log(teste)
+  /* console.log(teste) */
 
   function arrayToObject(array) { 
     let result = {};

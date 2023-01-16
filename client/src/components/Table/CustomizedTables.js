@@ -11,8 +11,7 @@ import { ContainerTable } from "./styled";
 import { ContextApi } from "../../context";
 import { Delete } from "@mui/icons-material";
 import { Button } from "@mui/material";
-import axios from "axios"
-import { useEffect } from "react";
+import axios from "axios";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -34,34 +33,25 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-//  vai ser aqui onde vou trazer api transformar mock em state
-// criar funcão executa Api
-
-
 export default function CustomizedTables() {
   const setShareholder = React.useContext(ContextApi);
 
-
-  const deleteShareholder = (id) =>{
-   
-    axios.delete(`http://localhost:3003/shareholders/${id}`)
-    .then(response =>{
-      console.log(response)
-      // if(response.ok){
-      //   return 
-      //   setShareholder.filter((shareholders)=>{
-      //     shareholders.id !== id
-      //   })
-      // }
-      alert("usuário deletado com sucesso") 
-      
-    }).catch(error =>{
-      // console.log(error)
-      // alert("algo deu errado tente em outro momento")
-    })
-  }
-      
-
+  const deleteShareholder = (id) => {
+    axios
+      .delete(
+        `https://cubu-challenge-server.onrender.com/users/shareholders/${id}`
+      )
+      .then((response) => {
+        if (response === 200) {
+          setShareholder.filter((shareholders) => shareholders.id !== id);
+        }
+        alert("usuário deletado com sucesso");
+      })
+      .catch((error) => {
+        // console.log(error)
+        alert("algo deu errado tente em outro momento");
+      });
+  };
 
   return (
     <ContainerTable>
@@ -95,11 +85,11 @@ export default function CustomizedTables() {
 
                 <StyledTableCell align="right">
                   <Button
-                  color="primary"
-                  variant="outlined"
-                  size="small"
-                  endIcon={<Delete />}
-                  onClick={()=>deleteShareholder(row.id)}
+                    color="primary"
+                    variant="outlined"
+                    size="small"
+                    endIcon={<Delete />}
+                    onClick={() => deleteShareholder(row.id)}
                   ></Button>
                 </StyledTableCell>
               </StyledTableRow>
