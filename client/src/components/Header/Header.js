@@ -89,6 +89,7 @@ const Header = (props) => {
             size="small"
             required
             title="Apenas letras são consideradas"
+            inputProps={{ pattern:'[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$'}}
           />
         </LastName>
 
@@ -104,6 +105,7 @@ const Header = (props) => {
             type={"number"}
             size="small"
             required
+            inputProps={{ pattern:'[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$'}}
           />
         </Participation>
 
