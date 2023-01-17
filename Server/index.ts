@@ -1,4 +1,4 @@
-import express from "express";
+import express, { response } from "express";
 import {AddressInfo} from "net";
 import { userRouter } from "./src/router/UserRouter";
 import cors from "cors"
@@ -7,10 +7,17 @@ import cors from "cors"
 const app = express();
 
 //remove credential cors
+
+
+app.use(cors({
+  origin: 'https://www.section.io'
+}));
+
 app.use(cors({
   origin: '*'
 }));
 
+response.setHeader("Access-Control-Allow-Origin",  "*")
 
 app.use("/users", userRouter);
 app.use(express.json());
