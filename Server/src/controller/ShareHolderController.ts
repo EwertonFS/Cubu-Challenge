@@ -17,8 +17,8 @@ export default class ShareHolderController {
     // levar a informação para outra camanda o melhor é atravez da dto ou no parametro
       const result =
         await this.shareHolderBusiness.getAllShareHoldersBusinees();
-
-      res.status(200).send(result);
+        res.setHeader("Access-Control-Allow-Origin",  "*")
+        res.status(200).send(result);
     } catch (error) {
       res.status(500).send("Erro");
       console.log(error);

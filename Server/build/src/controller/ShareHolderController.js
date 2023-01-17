@@ -15,6 +15,7 @@ class ShareHolderController {
         this.getAllShareHolders = (req, res) => __awaiter(this, void 0, void 0, function* () {
             try {
                 const result = yield this.shareHolderBusiness.getAllShareHoldersBusinees();
+                res.setHeader("Access-Control-Allow-Origin", "*");
                 res.status(200).send(result);
             }
             catch (error) {
