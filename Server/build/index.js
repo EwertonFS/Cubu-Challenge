@@ -7,6 +7,7 @@ const express_1 = __importDefault(require("express"));
 const UserRouter_1 = require("./src/router/UserRouter");
 const app = (0, express_1.default)();
 app.use("/users", UserRouter_1.userRouter);
+app.use(express_1.default.json());
 const server = app.listen(3003, () => {
     if (server) {
         const address = server.address();

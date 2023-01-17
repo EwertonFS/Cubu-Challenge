@@ -16,7 +16,7 @@ import { Container, FigureContainer, MainContainer, Title } from "./styled";
     //requisição testando o back
     axios.get('https://cubu-challenge-server.onrender.com/users/shareholders')
     .then(response => {
-      // console.log(response)
+       console.log(response)
       setShareholder(response.data)
     })
     

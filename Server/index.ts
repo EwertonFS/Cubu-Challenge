@@ -3,16 +3,11 @@ import {AddressInfo} from "net";
 import { userRouter } from "./src/router/UserRouter";
 
 
-/*  const expre = require('express');
-
-const serverless = require('serverless-http')  */
 
 const app = express();
 
-/* module.exports.handler = serverless(app) */
-
 app.use("/users", userRouter);
-/* app.use(express.json()); */
+app.use(express.json());
 //app.use(cors())
 
 const server = app.listen(3003, () => {
