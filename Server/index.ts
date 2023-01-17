@@ -9,19 +9,19 @@ const app = express();
 //remove credential cors
 
 
-app.use(cors({
+/* app.use(cors({
   origin: 'https://www.section.io'
-}));
+})); */
 
-app.use(cors({
+/* app.use(cors({
   origin: '*'
-}));
+})); */
 
-response.setHeader("Access-Control-Allow-Origin",  "*")
+/* response.setHeader("Access-Control-Allow-Origin",  "*") */
 
 app.use("/users", userRouter);
 app.use(express.json());
-//app.use(cors())
+app.use(cors())
 
 const server = app.listen(3003, () => {
   if (server) {
