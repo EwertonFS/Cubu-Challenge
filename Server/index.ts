@@ -1,10 +1,16 @@
 import express from "express";
 import {AddressInfo} from "net";
 import { userRouter } from "./src/router/UserRouter";
-
+import cors from "cors"
 
 
 const app = express();
+
+//remove credential cors
+app.use(cors({
+  origin: '*'
+}));
+
 
 app.use("/users", userRouter);
 app.use(express.json());
