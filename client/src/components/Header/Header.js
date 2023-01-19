@@ -50,7 +50,7 @@ const Header = (props) => {
       })
       .catch((error) => {
         console.log(error);
-        alert("algo deu errado tente mais tarde");
+        alert("Apenas numero natural e positivo");
       });
   };
 
@@ -72,6 +72,7 @@ const Header = (props) => {
             size="small"
             required
             pattern="[A-z]"
+            inputProps={{ inputMode:'text', pattern:'^[A-Z][a-z]+'}}
             title={"Apenas letras são consideradas"}
           />
         </Name>
@@ -89,7 +90,7 @@ const Header = (props) => {
             size="small"
             required
             title="Apenas letras são consideradas"
-            inputProps={{ pattern:'[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$'}}
+            inputProps={{ inputMode:'text', pattern:'^[A-Z][a-z]+'}}
           />
         </LastName>
 
@@ -105,7 +106,8 @@ const Header = (props) => {
             type={"number"}
             size="small"
             required
-            inputProps={{ pattern:'[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$'}}
+            pattern="/[^\d]+/g" 
+            inputProps={{ pattern:'/[d]/m'}} 
           />
         </Participation>
 
