@@ -37,7 +37,7 @@ export class ShareHolderDatabase extends BaseDatabase {
       return result;
       
     } catch (error) {
-      throw new Error("Erro do banco!");
+      throw new Error("Error do banco!");
     }
 
     // const result :shareHolder[] = await ShareHolderDatabase.connection.raw(`INSERT INTO SHAREHOLDERS(${user}) `)
@@ -57,7 +57,7 @@ export class ShareHolderDatabase extends BaseDatabase {
       
       
     } catch (error) {
-      throw new Error("Erro do banco !");
+      throw new Error("Error do banco !");
     }
   };
 }

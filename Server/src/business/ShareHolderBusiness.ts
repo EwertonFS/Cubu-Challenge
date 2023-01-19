@@ -25,6 +25,14 @@ export class ShareHolderBusiness {
         throw new Error("Preencha os campos name,lastName,participation");
       }
 
+      if (participation <= 0) {
+        throw new Error("Numero tem que ser positivo");
+      }
+
+      if(participation > 0){
+      Math.ceil(participation)
+      }
+      
       const user = new ShareHolder(name, lastName, participation);
 
       await this.shareHolderDatabase.createShareholderDataBase(

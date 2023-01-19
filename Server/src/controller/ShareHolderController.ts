@@ -35,7 +35,7 @@ export default class ShareHolderController {
       const input: AddInputDto = {
         name,
         lastName,
-        participation,
+        participation 
       };
 
     try {
