@@ -40,6 +40,8 @@ Feel free to make improviments like new funcionalities, visual optimizations, AP
 
 ## Questions
 
+
+
 Send your questions directly to dev@cubo.network or opening a issue.
 
 ## Project Finally
@@ -52,11 +54,11 @@ Tecnology:
 - React
 - Styled-Components
 - Matirial-MUI
-- Responsividade
+- Layout Responsive
 - Google Sharts
 
 - Link do Site :<https://cubu-client.onrender.com/>
-
+![siteCubu](https://user-images.githubusercontent.com/94709800/213529572-8a3583a0-8519-4dcf-b7cb-21761b7ef58e.png)
 
 ### Api
 
@@ -70,5 +72,6 @@ Tecnology:
 - Rest Request
 - Postaman
 - Test unitary-Jest
-- Mysql
 - Three-layer architecture
+- Mysql
+![TabelaCubu](https://user-images.githubusercontent.com/94709800/213529569-681bea47-34f0-4a6c-858f-c15d0a59c199.png)
