@@ -39,8 +39,7 @@ export class ShareHolderBusiness {
         user
       );
         
-      //console.log(result);
-      /* result.send(result) */
+     
     } catch (err:any) {
       throw new Error(" 400 - Bad Request");
     }

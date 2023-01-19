@@ -11,10 +11,10 @@ export default class ShareHolderController {
     private shareHolderBusiness: ShareHolderBusiness // private shareHolderBusiness : ShareHolderBusiness
   ) {}
 
-  //criar metodo de requisição
+ 
   getAllShareHolders = async (req: Request, res: Response): Promise<void> => {
     try {
-    // levar a informação para outra camanda o melhor é atravez da dto ou no parametro
+    
       const result =
         await this.shareHolderBusiness.getAllShareHoldersBusinees();
         res.setHeader("Access-Control-Allow-Origin",  "*")
@@ -31,7 +31,7 @@ export default class ShareHolderController {
   ): Promise<any> => {
     
       const { name, lastName, participation } = req.body;
-      // seria interessante inserir um dto
+     
       const input: AddInputDto = {
         name,
         lastName,
