@@ -73,7 +73,7 @@ const Header = (props) => {
             required
             pattern="[A-z]"
             inputProps={{ inputMode:'text', pattern:'^[A-Z][a-z]+'}}
-            title={"Apenas letras são consideradas"}
+            title={"Primeira letra tem que ser maiuscula , não pode haver acentos na palavra"}
           />
         </Name>
 
@@ -89,7 +89,7 @@ const Header = (props) => {
             type={"text"}
             size="small"
             required
-            title="Apenas letras são consideradas"
+            title="Primeira letra tem que ser maiuscula , não pode haver acentos na palavra"
             inputProps={{ inputMode:'text', pattern:'^[A-Z][a-z]+'}}
           />
         </LastName>
@@ -106,6 +106,7 @@ const Header = (props) => {
             type={"number"}
             size="small"
             required
+            title="Somente numeros Naturais positivos , decimais serão arrendondados"
             pattern="/[^\d]+/g" 
             inputProps={{ pattern:'/[d]/m'}} 
           />
