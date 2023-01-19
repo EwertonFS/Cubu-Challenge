@@ -22,11 +22,11 @@ export class ShareHolderBusiness {
       const { name, lastName, participation } = input;
 
       if (!name || !lastName || !participation) {
-        throw new Error("Fill in the name , lastName and participation fields");
+        throw new Error("422 - Unprocessable Entity - Fill in the name , lastName and participation fields");
       }
 
       if (participation <= 0) {
-        throw new Error("the number has to be positive");
+        throw new Error("422 - Unprocessable Entity - the number has to be positive");
       }
 
       if(participation > 0){
